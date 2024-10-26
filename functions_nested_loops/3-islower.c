@@ -2,28 +2,20 @@
 #include <ctype.h>
 
 /**
- * int _islower(int c) - ecrire une fonction qui verifie la présence de caractère minuscules.
+ * _islower - Vérifie la presence de caractères minuscules.
+ * @c: le caractère à vérifier.
  *
- * Return: Always 0.
+ * Return: 1 si c'est une lettre minuscule, sinon 0
  */
 
-int _islower(int c);
+int _islower(int c)
 {
-	int c:
-		char x:
-
-		for (x = 'A'; x <= 'Z'; c++)
-			for (c = 'a'; c <= 'z'; c++)
-			{
-				if (c == 'a')
-				{
-
-					_putchar('1');
-				}
-				else
-				{
-
-					_putchar('0');
-				}
-			}
+	if (c >= 'a' && c <= 'z')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
