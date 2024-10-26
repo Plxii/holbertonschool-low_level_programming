@@ -5,19 +5,25 @@
  * int _islower(int c) - ecrire une fonction qui verifie la présence de caractère minuscules.
  *
  * Return: Always 0.
- *
  */
 
 int _islower(int c);
 {
-	int r;
+	int c:
+		char x:
 
-	r = _islower('H');
-	_putchar(r + '0');
-	r = _islower('o');
-	_putchar(r + '0');
-	r = _islower(108);
-	_putchar(r + '0');
-	_putchar('\n');
-	return (0);
+		for (x = 'A'; x <= 'Z'; c++)
+			for (c = 'a'; c <= 'z'; c++)
+			{
+				if (c == 'a')
+				{
+
+					_putchar('1');
+				}
+				else
+				{
+
+					_putchar('0');
+				}
+			}
 }
