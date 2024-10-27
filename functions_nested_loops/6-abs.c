@@ -6,7 +6,7 @@
  * _abs - Prend un entier comme argument,
  * et retourne un entier
  *
- * n: La valeur absolue d'un entier
+ * @n: La valeur absolue d'un entier
  *
  * Return: -n si n est négatif, retourne sa valeur positive
  * sinon retourne a n.
