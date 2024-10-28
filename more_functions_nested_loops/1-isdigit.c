@@ -9,7 +9,7 @@
  */
 int _isdigit(int c)
 {
-	if (c <= '\126')
+	if (c <= '9')
 	{
 		return (1);
 	}
