@@ -10,7 +10,7 @@
  */
 int mul(int a, int b)
 {
-	if (a * b && a * b > 0)
+	if ( a * b > 0 || a * b < 0)
 	{
 		return (a * b);
 	}
