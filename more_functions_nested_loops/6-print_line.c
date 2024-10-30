@@ -2,12 +2,12 @@
 #include <stdio.h>
 
  /**
- * print_line - Trace une ligne droite dans un terminal.
+ * print_line - Trace une ligne droite dans le terminal.
  * @n: Le nombre de fois que le caractère _ doit être imprimé.
  *
  * Return: rien.
  */
-void print_line(int n)
+void print_line(int n);
 {
 	int i;
 
