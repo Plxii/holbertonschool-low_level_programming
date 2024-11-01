@@ -3,7 +3,7 @@
 
 /**
  * puts_half - Prints half of a string.
- * @str - La chaîne de caractère.
+ * @str: La chaîne de caractère.
  *
  * Return: void.
  */
