@@ -22,9 +22,4 @@ void rev_string(char *s)
 		s[j] = s[i - j - 1];
 		s[i - j - 1] = temp;
 	}
-	for (j = 0; j < i; j++)
-	{
-		printf("%c", s[j]);
-	}
-	printf("\n");
 }
