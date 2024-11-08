@@ -10,7 +10,8 @@
  */
 unsigned int _strspn(const char *str, const char *accept)
 {
-	int i, j, found;
+	unsigned int i, j;
+	int found;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
@@ -28,5 +29,7 @@ unsigned int _strspn(const char *str, const char *accept)
 			break;
 		}
 	}
+
 	return (i);
 }
+
