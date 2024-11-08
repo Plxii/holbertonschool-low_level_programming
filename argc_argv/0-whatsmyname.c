@@ -3,17 +3,16 @@
 /**
  * main - Program that prints its name, followed by a new line.
  * @argc: Number of arguments passed to program.
- * @argv: Tableau des arguments sous forme de chaînes de caractères.
+ * @argv: an array of pointers to the string.
  *
  * Return: Always 0.
  */
 int main(int argc, char *argv[])
 {
-	int i;
-
-	for (i = 0; i < argc; i++)
+	if (argc > 0)
 	{
-		printf("argv[%d] = [%s]\n", i, argv[i]);
+		printf("%s\n", argv[0]);
+		return (0);
 	}
 	return (0);
 }
