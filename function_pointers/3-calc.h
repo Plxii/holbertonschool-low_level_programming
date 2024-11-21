@@ -7,7 +7,7 @@
 
 
 /**
- * Struct op - Struct.
+ * struct op - Struct.
  * @op: char ptr.
  * @f: int function ptr.
  */
