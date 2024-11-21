@@ -1,6 +1,11 @@
 #ifndef CALC_H
 #define CALC_H
 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
 /**
  * Struct op - Struct.
  * @op: char ptr.
