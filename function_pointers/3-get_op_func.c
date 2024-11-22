@@ -7,13 +7,10 @@
  * to perform the operation asked by the user.
  * @s: operator passed as argument to the program.
  *
- * Return: If s does not match any of the 5
- * expected operators (+, -, *, /, %), return NULL.
+ * Return: A pointer.
  */
 int (*get_op_func(char *s))(int, int)
 {
-	int i;
-
 	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
@@ -22,15 +19,14 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL},
 	};
+	int i = 0;
 
 	i = 0;
-	while (ops[i].op)
+	while (ops[i].op != NULL && *(ops[i].op) != *s)
 	{
-		if (*s == *(ops[i].op))
-		{
-			return (ops[i].f);
-			i++;
-		}
-		return (0);
+		i++;
 	}
+	return (ops[i].f);
+
+
 }

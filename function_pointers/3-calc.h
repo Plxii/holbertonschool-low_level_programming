@@ -4,12 +4,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <stddef.h>
 
 /**
- * struct op - Struct.
- * @op: char ptr.
- * @f: int function ptr.
+ * struct op - Struct op.
+ * @op: The operator.
+ * @f: The function associated.
  */
 typedef struct op
 {
