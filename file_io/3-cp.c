@@ -64,9 +64,10 @@ void copy_file(const char *file_from, const char *file_to)
 int main(int argc, char *argv[])
 {
 	if (argc != 3)
+	{
 		print_error("Usage: cp file_from file_to\n", 97);
-
+	}
 	copy_file(argv[1], argv[2]);
 
-	return 0;
+	return (0);
 }
