@@ -1,43 +1,47 @@
 #include <fcntl.h>
 #include <unistd.h>
-#include <stdlib.h>
+#include <sys/stat.h>
 #include <string.h>
-#include "main.h"
 
 /**
- * create_file - function that creates a file.
- * @filename: filename
- * @text_content: text content
+ * create_file - Creates a file with specific content
+ * @filename: The name of the file to be created
+ * @text_content: The content to write into the file
+ *
  * Return: 1 on success, -1 on failure
- * (file can not be created, file can not be written,
- * write “fails”, etc…)
  */
 int create_file(const char *filename, char *text_content)
 {
-	ssize_t index = 0;
-	int file;
+	int fd, write_status;
+	ssize_t len = 0;
 
+	/* Check if filename is NULL */
 	if (filename == NULL)
 	{
 		return (-1);
 	}
-	if (text_content == NULL)
-	{
-		text_content = "";
-	}
-	while (text_content[index] != '\0')
-	{
-		index++;
-	}
-	file = open(filename, 0_CREAT | 0_RDWR | 0 - TRUNC, 0600);
-	if (file != -1)
-	{
-		write(file, text_content, index);
-	}
-	if (file == -1)
+
+
+	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+	if (fd == -1)
 	{
 		return (-1);
 	}
-	close(file);
-	return (1);
+
+	/* If text_content is not NULL, write it to the file */
+	if (text_content != NULL)
+	{
+		len = strlen(text_content);
+		write_status = write(fd, text_content, len);
+		if (write_status == -1)
+		{
+			close(fd);
+			return (-1); /* Return -1 if write fails */
+		}
+	}
+
+	/* Close the file */
+	close(fd);
+
+	return (1); /* Return 1 on success */
 }
