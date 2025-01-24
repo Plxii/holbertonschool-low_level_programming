@@ -14,26 +14,30 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd, sz = 0, wr;
+	ssize_t index = 0;
+	int file;
 
 	if (filename == NULL)
+	{
 		return (-1);
-	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
-	if (fd == -1)
-		return (-1);
-
+	}
 	if (text_content == NULL)
+	{
 		text_content = "";
-
-	while (text_content[sz] != '\0')
-		sz++;
-
-	wr = write(fd, text_content, sz);
-
-	if (wr == -1)
+	}
+	while (text_content[index] != '\0')
+	{
+		index++;
+	}
+	file = open(filename, 0_CREAT | 0_RDWR | 0-TRUNC, 0600);
+	if (file != -1)
+	{
+		write(file, text_content, index);
+	}
+	if (file == -1)
+	{
 		return (-1);
-
-	close(fd);
+	}
+	close(file);
 	return (1);
-
 }
