@@ -29,7 +29,7 @@ int create_file(const char *filename, char *text_content)
 	{
 		index++;
 	}
-	file = open(filename, 0_CREAT | 0_RDWR | 0-TRUNC, 0600);
+	file = open(filename, 0_CREAT | 0_RDWR | 0 - TRUNC, 0600);
 	if (file != -1)
 	{
 		write(file, text_content, index);
